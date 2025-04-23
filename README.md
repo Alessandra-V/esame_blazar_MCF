@@ -21,3 +21,12 @@ Tutte le funzioni utilizzate per l'analisi sono contenute nei seguenti file:
 Che contiene le funzioni volte all'analisi dei dati
 ### modulo_funzioni_plot_blazar.py
 Che contiene le funzioni utilizzate per la realizzazione dei grafici 
+
+## Indicazioni di utilizzo
+Per eseguire correttamente il programma è necessaio scaricare correttamente sia i file di dati che i moduli di analisi e apporli in un apposita cartella.
+Il file di analisi, *periodicità_blazar.py* è strutturato in modo da eseguire solo delle parti di programma sotto indicazione dell'utente tramite l'utilizzo di _argparse_.
+L'utente è così in grado di visualizzare indipendentemente le varie fasi del progetto utilizzando l'interfaccia testuale
+
+
+
+
