@@ -380,24 +380,24 @@ def main():
     pval_4W = fbl.significatività_int(picchi_sint_4W, periodo_4W[1], n_bins)
 
     if args.sint == True:
-        blplt.plot_all_hist(picchi_sint_1M, picchi_sint_2M, picchi_sint_3M, picchi_sint_4M, periodo_1M[1], periodo_2M[1], periodo_3M[1], periodo_4M[1], "M", c_secondari, n_bins)
-        blplt.plot_all_hist(picchi_sint_1W, picchi_sint_2W, picchi_sint_3W, picchi_sint_4W, periodo_1W[1], periodo_2W[1], periodo_3W[1], periodo_4W[1], "W", c_secondari, n_bins)
-
 
         print("\033[95m  \t                     Tabella della Significatività dei periodi delle Fonti  \033[0m")
         print(" ")
         print("\033[4m       Nome Fonte       | Base Temporale | Periodo[gg]  |   p-value  | Significatività [%]  \033[0m")
-        print(" {:<25} Settimanale     {:.2f}\t   {:.4f}\t    {:.2f}% \t         ".format(data1W_diz["nome"],1/(periodo_1W[0]*86400),pval_1W,(1-pval_1W)*100))
-        print(" {:<25} Mensile         {:.2f}\t   {:.4f}\t    {:.2f}% \t         ".format(data1M_diz["nome"],1/(periodo_1M[0]*86400),pval_1M,(1-pval_1M)*100))
+       
+        print(" {:<25} Mensile         {:.2f}\t   {:.5f}\t     {:.2f}%  \u00B10.01%      ".format(data1M_diz["nome"],1/(periodo_1M[0]*86400),pval_1M,(1-pval_1M)*100))
+        print(" {:<25} Mensile         {:.2f}\t  <{:.5f}\t    >{:.2f}%  \u00B10.01%      ".format(data2M_diz["nome"],1/(periodo_2M[0]*86400),pval_2M,(1-pval_2M)*100))
+        print(" {:<25} Mensile         {:.2f}\t   {:.5f}\t     {:.2f}%  \u00B10.01%      ".format(data3M_diz["nome"],1/(periodo_3M[0]*86400),pval_3M,(1-pval_3M)*100))
+        print(" {:<25} Mensile         {:.2f}\t   {:.5f}\t     {:.2f}%  \u00B10.01%      ".format(data4M_diz["nome"],1/(periodo_4M[0]*86400),pval_4M,(1-pval_4M)*100))
         print("-----------------------------------------------------------------------------------------------------")
-        print(" {:<25} Settimanale     {:.2f}\t   {:.4f}\t    {:.2f}% \t         ".format(data2W_diz["nome"],1/(periodo_2W[0]*86400),pval_2W,(1-pval_2W)*100))
-        print(" {:<25} Mensile         {:.2f}\t   {:.4f}\t    {:.2f}% \t         ".format(data2M_diz["nome"],1/(periodo_2M[0]*86400),pval_2M,(1-pval_2M)*100))
-        print("-----------------------------------------------------------------------------------------------------")
-        print(" {:<25} Settimanale     {:.2f}\t   {:.4f}\t    {:.2f}% \t         ".format(data3W_diz["nome"],1/(periodo_3W[0]*86400),pval_3W,(1-pval_3W)*100))
-        print(" {:<25} Mensile         {:.2f}\t   {:.4f}\t    {:.2f}% \t         ".format(data3M_diz["nome"],1/(periodo_3M[0]*86400),pval_3M,(1-pval_3M)*100))
-        print("-----------------------------------------------------------------------------------------------------")
-        print(" {:<25} Settimanale     {:.2f}\t   {:.4f}\t    {:.2f}% \t         ".format(data4W_diz["nome"],1/(periodo_4W[0]*86400),pval_4W,(1-pval_4W)*100))
-        print(" {:<25} Mensile         {:.2f}\t   {:.4f}\t    {:.2f}% \t         ".format(data4M_diz["nome"],1/(periodo_4M[0]*86400),pval_4M,(1-pval_4M)*100))
+        print(" {:<25} Settimanale     {:.2f}\t   {:.5f}\t     {:.2f}%  \u00B10.01%      ".format(data1W_diz["nome"],1/(periodo_1W[0]*86400),pval_1W,(1-pval_1W)*100))
+        print(" {:<25} Settimanale     {:.2f}\t  <{:.5f}\t    >{:.2f}%  \u00B10.01%      ".format(data2W_diz["nome"],1/(periodo_2W[0]*86400),pval_2W,(1-pval_2W)*100))
+        print(" {:<25} Settimanale     {:.2f}\t  <{:.5f}\t    >{:.2f}%  \u00B10.11%      ".format(data3W_diz["nome"],1/(periodo_3W[0]*86400),pval_3W,(1-pval_3W)*100))
+        print(" {:<25} Settimanale     {:.2f}\t  <{:.5f}\t    >{:.2f}%  \u00B10.01%      ".format(data4W_diz["nome"],1/(periodo_4W[0]*86400),pval_4W,(1-pval_4W)*100))
+
+
+        blplt.plot_all_hist(picchi_sint_1M, picchi_sint_2M, picchi_sint_3M, picchi_sint_4M, periodo_1M[1], periodo_2M[1], periodo_3M[1], periodo_4M[1], "M", c_secondari, n_bins)
+        blplt.plot_all_hist(picchi_sint_1W, picchi_sint_2W, picchi_sint_3W, picchi_sint_4W, periodo_1W[1], periodo_2W[1], periodo_3W[1], periodo_4W[1], "W", c_secondari, n_bins)
 
 
 

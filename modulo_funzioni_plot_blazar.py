@@ -4,7 +4,7 @@ Modulo funzioni per realizzazione di grafici relativi allo studio della periodic
 Autore: Valenti Alessandra
 
 """
-
+import modulo_funzioni_blazar as fbl
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -280,6 +280,7 @@ def istogramma_singificatività(picchi, periodo, colore1, colore2, n_bins, base_
 
 def plot_all_hist(picchi1, picchi2, picchi3, picchi4, p1, p2, p3, p4, base_temp, colori2, n_bins):
 
+
     fig , ax = plt.subplots(2,2)
     plt.subplots_adjust(wspace=0.1)
 
@@ -288,10 +289,10 @@ def plot_all_hist(picchi1, picchi2, picchi3, picchi4, p1, p2, p3, p4, base_temp,
     if base_temp == "W":
         base = "settimanale"
 
-    fig.suptitle("Istogrammi della distribuzione dei massimi delle curve sintetiche su base {}".format(base))
+    fig.suptitle("Istogrammi della distribuzione dei massimi delle curve sintetiche su base {}".format(base), fontsize=15 )
 
     ax[0,0].axvline(np.abs(p1)**2, color = colori2[0], linestyle = '--',linewidth = 3, label = "Picco originale" )
-    n, bis, p = ax[0,0].hist(np.abs(picchi1)**2, bins = n_bins, edgecolor = "black", linewidth = 0.2, label = "fonte 1" , density = True)
+    n, bis, p = ax[0,0].hist(np.abs(picchi1)**2, bins = n_bins, edgecolor = "black", linewidth = 0.2, label = "3C 273 (FSRQ)" , density = True)
     fracs = n / n.max()
     norm = colors.Normalize(fracs.min(), fracs.max())
     for thisfrac, thispatch in zip(fracs, p):
@@ -299,7 +300,7 @@ def plot_all_hist(picchi1, picchi2, picchi3, picchi4, p1, p2, p3, p4, base_temp,
         thispatch.set_facecolor(color)
 
     ax[0,1].axvline(np.abs(p2)**2, color = colori2[1], linestyle = '--',linewidth = 3, label = "Picco originale" )
-    n, bis, p = ax[0,1].hist(np.abs(picchi2)**2, bins = n_bins, edgecolor = "black", linewidth = 0.1, label = "fonte 2", density = True)
+    n, bis, p = ax[0,1].hist(np.abs(picchi2)**2, bins = n_bins, edgecolor = "black", linewidth = 0.1, label = "PG 1553 + 113 (BL Lac)", density = True)
     fracs = n / n.max()
     norm = colors.Normalize(fracs.min(), fracs.max())
     for thisfrac, thispatch in zip(fracs, p):
@@ -307,7 +308,7 @@ def plot_all_hist(picchi1, picchi2, picchi3, picchi4, p1, p2, p3, p4, base_temp,
         thispatch.set_facecolor(color)
 
     ax[1,1].axvline(np.abs(p3)**2, color = colori2[2], linestyle = '--',linewidth = 3, label = "Picco originale" )
-    n, bis, p = ax[1,1].hist(np.abs(picchi3)**2, bins = n_bins, edgecolor = "black", linewidth = 0.2, label = "fonte 3", density = True)
+    n, bis, p = ax[1,1].hist(np.abs(picchi3)**2, bins = n_bins, edgecolor = "black", linewidth = 0.2, label = "BL Lacertae (BL Lac)", density = True)
     fracs = n / n.max()
     norm = colors.Normalize(fracs.min(), fracs.max())
     for thisfrac, thispatch in zip(fracs, p):
@@ -315,7 +316,7 @@ def plot_all_hist(picchi1, picchi2, picchi3, picchi4, p1, p2, p3, p4, base_temp,
         thispatch.set_facecolor(color)
 
     ax[1,0].axvline(np.abs(p4)**2, color = colori2[3], linestyle = '--',linewidth = 3, label = "Picco originale" )
-    n, bis, p = ax[1,0].hist(np.abs(picchi4)**2, bins = n_bins, edgecolor = "black", linewidth = 0.2, label = "fonte 4", density = True)
+    n, bis, p = ax[1,0].hist(np.abs(picchi4)**2, bins = n_bins, edgecolor = "black", linewidth = 0.2, label = "3C 454.3 (FSRQ)", density = True)
     fracs = n / n.max()
     norm = colors.Normalize(fracs.min(), fracs.max())
     for thisfrac, thispatch in zip(fracs, p):
